@@ -1,0 +1,729 @@
+local function YTRQLT_fake_script() -- Native.Script 
+	local script = Instance.new('Script', game:GetService("CoreGui").NativeMenu.Native)
+	
+	local userInputService = game:GetService("UserInputService")
+	local localPlayer = game.Players.LocalPlayer
+	local CurrentButtonsVisible = 5
+	local curSelected = 1
+	local curSections = 1
+	local side = 0 -- 0 being the RIGHT and 1 being the LEFT
+	local drag = 0 -- 0 being OFF and 1 being ON
+	local speed = 16 -- for the speed slider
+	local jump = 50 -- for the jump slider
+	curSelected = 1
+	curSections = 1
+	
+	
+	
+	local frontPage = script.Parent.Header.Pages.FrontPage
+	local localPage = script.Parent.Header.Pages.Locale
+	local scripts = script.Parent.Header.Pages.Scripts
+	local games = script.Parent.Header.Pages.Games
+	local hubs = script.Parent.Header.Pages.Hub
+	local Settings = script.Parent.Header.Pages.Settings
+	local home = script.Parent.Header.Pages.Home
+	
+	local one = script.Parent.Header.ShadedSelections["1"]
+	local two = script.Parent.Header.ShadedSelections["2"]
+	local three = script.Parent.Header.ShadedSelections["3"]
+	local four = script.Parent.Header.ShadedSelections["4"]
+	local five = script.Parent.Header.ShadedSelections["5"]
+	local six = script.Parent.Header.ShadedSelections["6"]
+	local seven = script.Parent.Header.ShadedSelections["7"]
+	local eight = script.Parent.Header.ShadedSelections["8"]
+	local nine = script.Parent.Header.ShadedSelections["9"]
+	
+	
+	
+	
+	-- Functions
+	
+	-- Find Secxtion Commands
+	
+	
+	
+	-- Sections Commands
+	
+	local function localslidersettingsplus()
+		if curSections == 3 then
+			if curSelected == 1 then
+				speed = speed + 1
+				wait(0.01)
+				localPage["1"].TextBox.Text = speed
+			else
+				if curSelected == 2 then
+					jump = jump + 1
+					wait(0.01)
+					localPage["2"].TextBox.Text = jump
+				end
+			end
+		end
+	end
+	
+	local function localslidersettingsminus()
+		if curSections == 3 then
+			if curSelected == 1 then
+				speed = speed - 1
+				wait(0.01)
+				localPage["1"].TextBox.Text = speed
+			else
+				if curSelected == 2 then
+					jump = jump - 1
+					wait(0.01)
+					localPage["2"].TextBox.Text = jump
+				end
+			end
+		end
+	end
+	
+	local function localesection()
+		if curSections == 3 then
+			if curSelected == 1 then
+				localPlayer.Character.Humanoid.WalkSpeed = speed
+			else
+				if curSelected == 2 then
+					localPlayer.Character.Humanoid.JumpPower = jump
+				else
+					if curSelected == 3 then
+						loadstring(game:HttpGet(('https://pastebin.com/raw/5EpLgBsA'),true))()
+					else	
+						if curSelected == 4 then
+							loadstring(game:HttpGet("https://raw.githubusercontent.com/AnakinScriptss/AnakinScripts/master/UAIM", true))()
+						else
+							if curSelected == 5 then
+								loadstring(game:HttpGet('https://raw.githubusercontent.com/AnakinScriptss/AnakinScripts/master/UniversalHitboxExpander'))()
+							else
+								if curSelected == 6 then
+									game.StarterGui:SetCoreGuiEnabled(2, true)
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	local function bringhead()
+		local LP = game:GetService("Players").LocalPlayer
+		while wait(0.1) do
+			for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+				if v and v.Character and v ~= LP and v.Character:FindFirstChild("Head") then
+					local hrp = v.Character:FindFirstChild("Head") --// I thought of using humanoidrootpart first but it works better with the head!
+					hrp:BreakJoints()
+					hrp.Transparency = 0
+					hrp.BrickColor = v.TeamColor
+					hrp.Anchored = true
+					hrp.CanCollide = false
+					pcall(function()
+						hrp.CFrame = LP.Character.HumanoidRootPart.CFrame * CFrame.new(1,0,-3.5)
+					end)
+				end
+			end
+		end
+	end
+	
+	local function scriptssection()
+		if curSections == 4 then
+			if curSelected == 1 then
+				loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source', true))()
+			else
+				if curSelected == 2 then
+					bringhead()
+				else
+					if curSelected == 3 then
+						loadstring(game:HttpGet("https://raw.githubusercontent.com/AnakinScriptss/AnakinScripts/master/Invisfling", true))()
+					else	
+						if curSelected == 4 then
+							loadstring(game:HttpGet("https://pastebin.com/raw/UqC0MrJ6", true))()
+						else
+							if curSelected == 5 then
+								loadstring(game:HttpGet(('https://pastebin.com/raw/Mq4FTHB1'),true))()
+							else
+								if curSelected == 6 then
+									loadstring(game:HttpGet('https://raw.githubusercontent.com/AnakinScriptss/AnakinScripts/master/FEBtools', true))()
+								else
+									if curSelected == 7 then
+										game:GetService("Players").LocalPlayer.Character.UpperTorso.Waist:Destroy()
+									else
+										if curSelected == 8 then
+											loadstring(game:HttpGet("https://pastebin.com/raw/RZ4v0S3M", true))()
+										else
+											if curSelected == 9 then
+												loadstring(game:HttpGet(('https://pastebin.com/raw/CdDw1CUw'),true))()
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	local function gamessection()
+		if curSections == 4 then
+			if curSelected == 1 then
+				loadstring(game:HttpGet('https://pastebin.com/raw/GnPxWb3N', true))()
+			else
+				if curSelected == 2 then
+					loadstring(game:HttpGet("https://pastebin.com/raw/AKuDusRG", true))()
+				else
+					if curSelected == 3 then
+						loadstring(game:HttpGet(("https://pastebin.com/raw/yCrBkPaY"), true))()
+					else	
+						if curSelected == 4 then
+							loadstring(game:HttpGet('https://pastebin.com/raw/MmdjJZCx'))()
+						else
+							if curSelected == 5 then
+								loadstring(game:HttpGet("https://pastebin.com/raw/mHfK0Xk4", true))()
+							else
+								if curSelected == 6 then
+									loadstring(game.HttpGet('https://raw.githubusercontent.com/AnakinScriptss/AnakinScripts/master/SuperPowerSimAutoFarm', true))()
+								else
+									if curSelected == 7 then
+										loadstring(game:HttpGet("https://thisstuff.xyz/Api/WOAHSCRIPTS/1257821635-9356095531/oOAfkpCWzDWsn4CjuLZLZOs3vCf4rgUMhXaJd32VyHSs2tojOCTUKINNTbAuTTCGFrYTyMeBDEIfdo7C0Sp5EnCyxN80pHf5jpqk2xU7f1LAcx2Nt1cZe", true))()
+									else
+										if curSelected == 8 then
+											
+										else
+											if curSelected == 9 then
+												
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	local function hubssection()
+		if curSections == 4 then
+			if curSelected == 1 then
+				loadstring(game:HttpGet("https://pastebin.com/raw/maCqrW0g", true))()
+			else
+				if curSelected == 2 then
+					loadstring(game:HttpGet(("https://pastebin.com/raw/yCrBkPaY"), true))()
+				else
+					if curSelected == 3 then
+						loadstring(game:HttpGet(('https://www.potato-hub.com/PotatoHub.lua'),true))()
+					else	
+						if curSelected == 4 then
+							loadstring(game:HttpGet(('https://pastebin.com/raw/mtrRP1H1'),true))()
+						else
+							if curSelected == 5 then
+								loadstring(game:HttpGet("https://pastebin.com/raw/CWMPgkbi", true))()
+							else
+								if curSelected == 6 then
+									loadstring(game:HttpGet("https://pastebin.com/raw/cctd14ch", true))()
+								else
+									if curSelected == 7 then
+										loadstring(game:HttpGet(('https://pastebin.com/raw/SsG8y3HA'),true))()
+									else
+										if curSelected == 8 then
+											loadstring(game:HttpGet('https://raw.githubusercontent.com/AnakinScriptss/AnakinScripts/master/BrexCmds', true))()
+										else
+											if curSelected == 9 then
+												loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukieluuk2/LukHub/master/LukHub"))()
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	local function scriptssection()
+		if curSections == 7 then
+			if curSelected == 3 then
+				script.Parent.Parent:Destroy()
+			end
+		end
+	end
+	
+	-- Section Loading
+	
+	local function PageClear()
+		home.Visible = false
+		frontPage.Visible = false
+		localPage.Visible = false
+		scripts.Visible = false
+		games.Visible = false
+		hubs.Visible = false
+		Settings.Visible = false
+	end
+	PageClear()
+	frontPage.Visible = true
+	seven.BackgroundTransparency = 1
+	eight.BackgroundTransparency = 1
+	nine.BackgroundTransparency = 1
+	
+	local function curSectionFind()
+		if curSelected == 1 then
+			script.Parent.Header.Pages.Size = UDim2.new(0, 414, 0, 360)
+			CurrentButtonsVisible = 10
+			curSections = 2
+			PageClear()
+			home.Visible = true
+		else
+			if curSelected == 2 then
+				script.Parent.Header.Pages.Size = UDim2.new(0, 414, 0, 239)
+				CurrentButtonsVisible = 5
+				curSections = 3
+				PageClear()
+				localPage.Visible = true
+			else
+				if curSelected == 3 then
+					script.Parent.Header.Pages.Size = UDim2.new(0, 414, 0, 360)
+					CurrentButtonsVisible = 10
+					curSections = 4
+					PageClear()
+					scripts.Visible = true
+				else
+					if curSelected == 4 then
+						CurrentButtonsVisible = 10
+						script.Parent.Header.Pages.Size = UDim2.new(0, 414, 0, 360)
+						curSections = 5
+						PageClear()
+						games.Visible = true
+					else
+						if curSelected == 5 then
+							CurrentButtonsVisible = 10
+							script.Parent.Header.Pages.Size = UDim2.new(0, 414, 0, 360)
+							curSections = 6
+							PageClear()
+							hubs.Visible = true
+						else
+							if curSelected == 6 then
+								CurrentButtonsVisible = 5
+								curSections = 7
+								PageClear()
+								script.Parent.Header.Pages.Size = UDim2.new(0, 414, 0, 239)
+								Settings.Visible = true
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	-- LOOKS
+	
+	local function Clear()
+		one.BackgroundTransparency = 1
+		two.BackgroundTransparency = 1
+		three.BackgroundTransparency = 1
+		four.BackgroundTransparency = 1
+		five.BackgroundTransparency = 1
+		six.BackgroundTransparency = 1
+		seven.BackgroundTransparency = 1
+		eight.BackgroundTransparency = 1
+		nine.BackgroundTransparency = 1
+	end
+	
+	local function SmallSectionClear()
+		one.BackgroundTransparency = 1
+		two.BackgroundTransparency = 1
+		three.BackgroundTransparency = 1
+		four.BackgroundTransparency = 1
+		five.BackgroundTransparency = 1
+		six.BackgroundTransparency = 1
+		seven.BackgroundTransparency = 1
+		eight.BackgroundTransparency = 1
+		nine.BackgroundTransparency = 1
+	end
+	
+	local function Shade()
+		if curSections == 1 then
+			SmallSectionClear()
+			if curSelected == 1 then
+				SmallSectionClear()
+				wait(0.01)
+				one.BackgroundTransparency = 0.20
+			else
+				if curSelected == 2 then
+					SmallSectionClear()
+					wait(0.01)
+					two.BackgroundTransparency = 0.20
+				else
+					if curSelected == 3 then
+						SmallSectionClear()
+						wait(0.01)
+						three.BackgroundTransparency = 0.20
+					else
+						if curSelected == 4 then
+							SmallSectionClear()
+							wait(0.01)
+							four.BackgroundTransparency = 0.20
+						else
+							if curSelected == 5 then
+								SmallSectionClear()
+								wait(0.01)
+								five.BackgroundTransparency = 0.20
+							else
+								if curSelected == 6 then
+									SmallSectionClear()
+									wait(0.01)
+									six.BackgroundTransparency = 0.20
+								end
+							end
+						end
+					end
+				end
+			end
+		else
+			if curSections == 7 then
+				SmallSectionClear()
+				if curSelected == 1 then
+					SmallSectionClear()
+					wait(0.01)
+					one.BackgroundTransparency = 0.20
+				else
+					if curSelected == 2 then
+						SmallSectionClear()
+						wait(0.01)
+						two.BackgroundTransparency = 0.20
+					else
+						if curSelected == 3 then
+							SmallSectionClear()
+							wait(0.01)
+							three.BackgroundTransparency = 0.20
+						else
+							if curSelected == 4 then
+								SmallSectionClear()
+								wait(0.01)
+								four.BackgroundTransparency = 0.20
+							else
+								if curSelected == 5 then
+									SmallSectionClear()
+									wait(0.01)
+									five.BackgroundTransparency = 0.20
+								else
+									if curSelected == 6 then
+										SmallSectionClear()
+										wait(0.01)
+										six.BackgroundTransparency = 0.0
+									end
+								end
+							end
+						end
+					end
+				end
+			else
+				if curSelected == 1 then
+					Clear()
+					one.BackgroundTransparency = .20
+				else
+					if curSelected == 2 then
+						Clear()
+						two.BackgroundTransparency = .20
+					else
+						if curSelected == 3 then
+							Clear()
+							three.BackgroundTransparency = .20
+						else
+							if curSelected == 4 then
+								Clear()
+								four.BackgroundTransparency = .20
+							else
+								if curSelected == 5 then
+									Clear()
+									five.BackgroundTransparency = .20
+								else
+									if curSelected == 6 then
+										Clear()
+										six.BackgroundTransparency = .20
+									else
+										if curSelected == 7 then
+											Clear()
+											seven.BackgroundTransparency = .20
+										else
+											if curSelected == 8 then
+												Clear()
+												eight.BackgroundTransparency = .20
+											else
+												if curSelected ==  9 then
+													Clear()
+													nine.BackgroundTransparency = .20
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	Shade()
+	
+	
+	
+	
+	
+	
+	local function commandsectionfinder()
+		if curSections == 2 then
+			print("WhyDidYouHitEnterOnAPageWhereItOnlyHasSlider?????????????????????????")
+		else
+			if curSections == 3 then
+				localesection()
+			else
+				if curSections == 4 then
+					scriptssection()
+				else
+					if curSections == 5 then
+						gamessection()
+					else
+						if curSections == 6 then
+							hubssection()
+						else
+							if curSections == 7 then
+								scriptssection()
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	
+	
+	
+	
+	
+	
+	-- INPUTS
+	
+	userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.KeypadEight then
+				if curSelected >= 2 then
+					curSelected = curSelected - 1
+					Shade()
+				end
+			end
+		end
+	end)
+	
+	-- Value Movements Down
+	
+	userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.KeypadTwo then
+				Shade()
+				if curSelected <= CurrentButtonsVisible then
+					curSelected = curSelected + 1
+					Shade()
+				end
+			end
+		end
+	end)
+	
+	-- Change Page on Enter
+	
+	userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.KeypadFive then
+				if curSections == 1 then
+					curSectionFind()
+					curSelected = 1
+					wait(.05)
+					Shade()
+				else	
+					commandsectionfinder()
+				end
+			end
+		end
+	end)
+	
+	-- Go Back To Front Page on NumPad 0
+	
+	userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.KeypadZero then
+				CurrentButtonsVisible = 5
+				script.Parent.Header.Pages.Size = UDim2.new(0, 414, 0, 239)
+				PageClear()
+				frontPage.Visible = true
+				curSections = 1
+				curSelected = 1
+				Shade()
+			end
+		end
+	end)
+	
+	-- localepage slider forward
+	
+	userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.KeypadSix then
+				if curSections == 3 then
+					localslidersettingsplus()
+				else 
+					if curSections == 7 then
+						if curSelected == 1 then
+							if drag == 0 then
+								drag = 1
+								script.Parent.Header.Draggable = true
+								script.Parent.Header.Active = true
+								Settings["1"].ToggleOutline.ToggleInline.Clip:TweenPosition(
+									UDim2.new(0.609, 0, 0.03, 0),
+									Enum.EasingDirection.Out,
+									Enum.EasingStyle.Quad,
+									0.5
+								)
+							end
+						else
+							if curSelected == 2 then
+								if side == 0 then
+									side = 1
+									script.Parent.Header:TweenPosition(
+										UDim2.new(0.15, -207, 0.381, -50),
+										Enum.EasingDirection.Out,
+										Enum.EasingStyle.Quad,
+										1
+									)
+									Settings["2"].ToggleOutline.ToggleInline.Clip:TweenPosition(
+										UDim2.new(0.609, 0, 0.03, 0),
+										Enum.EasingDirection.Out,
+										Enum.EasingStyle.Quad,
+										0.5
+									)
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+	
+	-- localepage slider backward
+	
+	userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.KeypadFour then
+				if curSections == 3 then
+					localslidersettingsminus()
+				else
+					if curSections == 7 then
+						if curSelected == 1 then
+							if drag == 1 then
+								drag = 0
+								script.Parent.Header.Draggable = false
+								Settings["1"].ToggleOutline.ToggleInline.Clip:TweenPosition(
+									UDim2.new(-0.014, 0, 0.03, 0),
+									Enum.EasingDirection.Out,
+									Enum.EasingStyle.Quad,
+									0.5
+								)
+							end
+						else
+							if curSelected == 2 then
+								if side == 1 then
+									side = 0
+									script.Parent.Header:TweenPosition(
+										UDim2.new(0.873, -207, 0.381, -50),
+										Enum.EasingDirection.Out,
+										Enum.EasingStyle.Quad,
+										1
+									)								
+									Settings["2"].ToggleOutline.ToggleInline.Clip:TweenPosition(
+										UDim2.new(-0.014, 0, 0.03, 0),
+										Enum.EasingDirection.Out,
+										Enum.EasingStyle.Quad,
+										0.5
+									)
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+end
+coroutine.wrap(YTRQLT_fake_script)()
+
+local function OPOEA_fake_script() -- Native.Boot 
+	local script = Instance.new('Script', game:GetService("CoreGui").NativeMenu.Native)
+	
+	
+	local maingui = script.Parent.Header
+	local loadingBar = script.Parent.Loading
+	local openscreen = script.Parent.opening
+	
+	
+	maingui.Visible = false
+	loadingBar.Visible = true
+	loadingBar.Active = true
+	openscreen.Visible = true
+	openscreen.Active = true
+	openscreen.Position = UDim2.new(0.499, -219, 1.5, -219)
+	loadingBar.Position = UDim2.new(0.434, 0, -0.25, 0)
+	loadingBar.Frame.Bar.ClipBar.Gradient.Position = UDim2.new(-1.026, 0, -0.006, 0)
+	
+	openscreen:TweenPosition(
+		UDim2.new(0.499, -219,0.499, -219),
+		Enum.EasingDirection.Out,
+		Enum.EasingStyle.Quad,
+		1
+	)
+	
+	script.Parent.opening.Button.MouseButton1Click:Connect(function()
+		openscreen:TweenPosition(
+			UDim2.new(0.499, -219, 1.5, -219),
+			Enum.EasingDirection.Out,
+			Enum.EasingStyle.Quad,
+			1
+		)
+		wait(1)
+		openscreen.Visible = false
+		loadingBar:TweenPosition(
+			UDim2.new(0.434, 0, 0.395, 0),
+			Enum.EasingDirection.Out,
+			Enum.EasingStyle.Quad,
+			1
+		)
+		wait(1.5)
+		loadingBar.Frame.Bar.ClipBar.Gradient:TweenPosition(
+			UDim2.new(0.001, 0, -0.006, 0),
+			Enum.EasingDirection.Out,
+			Enum.EasingStyle.Quad,
+			3
+		)
+		wait(3)
+		loadingBar:TweenPosition(
+			UDim2.new(0.434, 0, -0.25, 0),
+			Enum.EasingDirection.Out,
+			Enum.EasingStyle.Quad,
+			1
+		)
+		wait(1)
+		openscreen:Destroy()
+		loadingBar:Destroy()
+		maingui.Position = UDim2.new(0.873, -207, 1.1, -50)
+		maingui.Visible = true
+		maingui:TweenPosition(
+			UDim2.new(0.873, -207, 0.381, -50),
+			Enum.EasingDirection.Out,
+			Enum.EasingStyle.Quad,
+			1
+		)
+	end)
+end
+coroutine.wrap(OPOEA_fake_script)()
